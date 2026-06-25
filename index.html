@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ثبت‌نام همکاری | فرم استخدام</title>
+  <meta name="description" content="فرم ثبت‌نام همکاری و استخدام با کد رهگیری، ارسال تلگرام و پنل مدیریت." />
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="badge">فرصت همکاری ویژه</div>
+      <h1>شروع مسیر همکاری با تیم ما</h1>
+      <p>
+        اطلاعاتت را دقیق ثبت کن. بعد از ارسال فرم، یک کد رهگیری اختصاصی دریافت می‌کنی.
+        این کد را تا اعلام نتایج نگه دار.
+      </p>
+
+      <div class="hero-stats">
+        <div><strong>۳ مرحله</strong><span>ثبت سریع</span></div>
+        <div><strong>کد رهگیری</strong><span>اختصاصی</span></div>
+        <div><strong>تلگرام</strong><span>ارسال خودکار</span></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="progress">
+        <div class="progress-line"><span id="progressBar"></span></div>
+        <div class="steps">
+          <button class="step active" type="button" data-step="1">۱</button>
+          <button class="step" type="button" data-step="2">۲</button>
+          <button class="step" type="button" data-step="3">۳</button>
+        </div>
+      </div>
+
+      <form id="recruitmentForm" novalidate>
+        <div class="form-step active" data-step="1">
+          <h2>اطلاعات فردی</h2>
+          <div class="grid">
+            <label>نام و نام خانوادگی
+              <input name="fullName" type="text" placeholder="مثلاً: امین رضایی" required minlength="3" />
+            </label>
+            <label>شماره تماس
+              <input name="phone" type="tel" placeholder="مثلاً: 09123456789" required pattern="^09[0-9]{9}$" />
+            </label>
+            <label>شهر محل سکونت
+              <input name="city" type="text" placeholder="مثلاً: تهران" required />
+            </label>
+            <label>سن
+              <input name="age" type="number" placeholder="مثلاً: ۲۴" required min="16" max="65" />
+            </label>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="2">
+          <h2>اطلاعات همکاری</h2>
+          <div class="grid">
+            <label>موقعیت موردنظر
+              <select name="position" required>
+                <option value="">انتخاب کنید</option>
+                <option>کارشناس فروش</option>
+                <option>پشتیبانی مشتریان</option>
+                <option>انبار و لجستیک</option>
+                <option>تولید محتوا</option>
+                <option>دیجیتال مارکتینگ</option>
+                <option>کارآموز / هنرجو</option>
+                <option>سایر</option>
+              </select>
+            </label>
+            <label>میزان تجربه
+              <select name="experience" required>
+                <option value="">انتخاب کنید</option>
+                <option>بدون سابقه</option>
+                <option>کمتر از ۱ سال</option>
+                <option>۱ تا ۳ سال</option>
+                <option>بیشتر از ۳ سال</option>
+              </select>
+            </label>
+            <label>نوع همکاری
+              <select name="workType" required>
+                <option value="">انتخاب کنید</option>
+                <option>تمام‌وقت</option>
+                <option>پاره‌وقت</option>
+                <option>دورکاری</option>
+                <option>کارآموزی</option>
+              </select>
+            </label>
+            <label>زمان مناسب تماس
+              <input name="callTime" type="text" placeholder="مثلاً: ۱۰ تا ۱۴" />
+            </label>
+          </div>
+        </div>
+
+        <div class="form-step" data-step="3">
+          <h2>تکمیل نهایی</h2>
+          <label>توضیحات کوتاه
+            <textarea name="message" rows="5" placeholder="خلاصه‌ای از مهارت‌ها، سابقه یا شرایط خود بنویسید..."></textarea>
+          </label>
+
+          <label class="check">
+            <input name="accept" type="checkbox" required />
+            <span>اطلاعات واردشده صحیح است و کد رهگیری را تا زمان اعلام نتایج نگه می‌دارم.</span>
+          </label>
+
+          <div class="secure-box">
+            <strong>امنیت اطلاعات</strong>
+            <span>توکن تلگرام فقط در سمت سرور و Environment Variables قرار می‌گیرد.</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="prevBtn" class="ghost" type="button">مرحله قبل</button>
+          <button id="nextBtn" type="button">مرحله بعد</button>
+          <button id="submitBtn" class="submit hidden" type="submit">ثبت نهایی و دریافت کد</button>
+        </div>
+
+        <p id="status" class="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="./assets/app.js"></script>
+</body>
+</html>

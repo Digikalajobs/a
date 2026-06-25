@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>پنل مدیریت ثبت‌نام‌ها</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <main class="admin-page">
+    <section class="admin-card">
+      <div class="admin-head">
+        <div>
+          <h1>پنل مدیریت ثبت‌نام‌ها</h1>
+          <p>نمایش داده‌ها فقط در صورت فعال بودن Supabase و رمز مدیریت.</p>
+        </div>
+        <div class="admin-tools">
+          <input id="password" type="password" placeholder="رمز مدیریت" />
+          <button id="loadBtn" type="button">بارگذاری</button>
+        </div>
+      </div>
+
+      <p id="adminStatus" class="status"></p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>کد رهگیری</th>
+              <th>نام</th>
+              <th>شماره</th>
+              <th>شهر</th>
+              <th>موقعیت</th>
+              <th>وضعیت</th>
+              <th>زمان</th>
+            </tr>
+          </thead>
+          <tbody id="rows">
+            <tr><td colspan="7">برای مشاهده، رمز مدیریت را وارد کنید.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="./admin.js"></script>
+</body>
+</html>
